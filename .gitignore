@@ -1,0 +1,14 @@
+*.swp
+.DS_Store
+node_modules/
+npm-debug.log
+.idea
+yarn.lock
+package-lock.json
+build
+.env
+public
+!public/.gitkeep
+!public/cvs/.gitkeep
+!public/avatars/.gitkeep
+!public/certificates/.gitkeep
