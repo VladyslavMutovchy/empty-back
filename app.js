@@ -14,8 +14,8 @@ import HelperService from './lib/common/HelperService.js';
 import Responses from './lib/common/Responses.js';
 import authApi from './lib/api/AuthApi.js';
 import adminListApi from './lib/api/AdminListAPI.js';
-import iBenchPanelAction from './lib/api/IBenchPanelAPI.js'
-
+import iBenchPanelAction from './lib/api/IBenchPanelAPI.js';
+import backAdminListApi from './lib/api/BackAdminListAPI.js';
 
 const __dirname = getDirName(import.meta.url);
 dotenv.config({ path: `${__dirname}/.env` });
@@ -59,6 +59,7 @@ router.route('/public/*').get((req, res) => {
 router.use(authApi);
 router.use(adminListApi);
 router.use(iBenchPanelAction);
+router.use(backAdminListApi);
 
 const port = process.env.PORT || 3002;
 //initialize server and add router to it
