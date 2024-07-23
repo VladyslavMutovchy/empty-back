@@ -7,6 +7,7 @@ import cors from 'cors';
 import path from 'path';
 import http from 'http';
 import fs from 'fs';
+import { Server } from 'socket.io';
 
 import { getDirName } from './lib/utils/functions.js';
 import dbClass from './lib/common/DbService.js';
@@ -64,7 +65,7 @@ router.use(backAdminListApi);
 const port = process.env.PORT || 3002;
 //initialize server and add router to it
 
-http
+const server = http
   .createServer(async (req, res) => {
     router(req, res, finalCallback(req, res));
   })
@@ -73,3 +74,19 @@ http
       ? console.log('Error occur :' + err)
       : console.log(`server is listening on ${port}`);
   });
+
+const socketIO = new Server(server);
+
+socketIO.on('connection', (socket) => {
+  console.log('===CONNECT', socket.id);
+
+  socket.on('register', (data) => {
+    console.log('===CONNECT register', data);
+  });
+
+  socket.on('test', (data) => {
+    console.log('===CONNECT test', data);
+    socket.emit('back-socket', 'Hello socket');
+  });
+});
+
