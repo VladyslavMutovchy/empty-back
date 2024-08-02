@@ -79,5 +79,9 @@ const server = http
       : console.log(`server is listening on ${port}`);
   });
 
-initSocket(server);
+try {
+  initSocket(server);
+} catch (error) {
+  console.log('===SOCKET ERROR', error);
+}
 
