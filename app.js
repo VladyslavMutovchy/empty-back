@@ -19,6 +19,7 @@ import backAdminListApi from './lib/api/BackAdminListAPI.js';
 import UsersListAPI from './lib/api/UsersListAPI.js';
 import ChatAPI from './lib/api/ChatAPI.js';
 import { initSocket } from './lib/utils/socket.js';
+import editProfileApi from './lib/api/EditProfileAPI.js';
 
 const __dirname = getDirName(import.meta.url);
 dotenv.config({ path: `${__dirname}/.env` });
@@ -65,6 +66,7 @@ router.use(iBenchPanelAction);
 router.use(backAdminListApi);
 router.use(UsersListAPI);
 router.use(ChatAPI);
+router.use(editProfileApi);
 
 const port = process.env.PORT || 3002;
 //initialize server and add router to it
