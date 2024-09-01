@@ -10,6 +10,7 @@ import fs from 'fs';
 
 import { getDirName } from './lib/utils/functions.js';
 import dbClass from './lib/common/DbService.js';
+import mongoClient from './lib/common/MongoService.js';
 import HelperService from './lib/common/HelperService.js';
 import Responses from './lib/common/Responses.js';
 import authApi from './lib/api/AuthApi.js';
@@ -26,6 +27,9 @@ dotenv.config({ path: `${__dirname}/.env` });
 
 //Db creation
 global.dbConnection = new dbClass();
+global.mongoConnection = mongoClient;
+
+mongoClient.connectToMongoDB();
 //global helpers class
 global.helpers = HelperService;
 global.responses = Responses;
