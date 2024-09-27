@@ -13,3 +13,4 @@ public
 !public/cvs/.gitkeep
 !public/avatars/.gitkeep
 !public/certificates/.gitkeep
+.testenv
