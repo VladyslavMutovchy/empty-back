@@ -7,7 +7,6 @@ yarn.lock
 package-lock.json
 build
 .env
-.testenv
 .envtest
 public
 !public/.gitkeep

@@ -13,7 +13,7 @@ console.log('===import.meta.url', import.meta.url);
 
 const __dirname = getDirName(import.meta.url);
 const testDir = path.join(__dirname, '..');
-dotenv.config({ path: `${testDir}/.testenv` });
+dotenv.config({ path: `${testDir}/.envtest` });
 
 global.dbConnection = new dbClass();
 
