@@ -13,4 +13,8 @@ public
 !public/cvs/.gitkeep
 !public/avatars/.gitkeep
 !public/certificates/.gitkeep
+<<<<<<< HEAD
 .testenv
+=======
+
+>>>>>>> 870bb4c0b9bc44239cd7d71aa481a0b633a0fd5c
