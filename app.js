@@ -35,7 +35,7 @@ mongoClient.connectToMongoDB();
 global.helpers = HelperService;
 global.responses = Responses;
 
-// //initialize router
+//initialize router
 const router = Router();
 
 // use some middleware and compress all outgoing responses
@@ -47,7 +47,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 //add cors
 router.use(cors());
 
-router.route('/public/*').get((req, res) => {
+router.route(/^\/public\/(.+)/).get((req, res) => {
   let filePath = path.join(__dirname, req.url);
 
   if (filePath.includes('%20')) {

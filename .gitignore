@@ -4,10 +4,9 @@ node_modules/
 npm-debug.log
 .idea
 yarn.lock
-package-lock.json
 build
 .env
-.envtest
+.testenv
 public
 !public/.gitkeep
 !public/cvs/.gitkeep
